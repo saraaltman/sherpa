@@ -1,18 +1,17 @@
 import { useState } from 'react'
+import {Route, Routes} from 'react-router-dom';
 import './App.css'
+import HomePage from './components/HomePage';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <div className="header">
-        <div className="avatar">
-          <div className="w-24 rounded">
-            <img className="avatar-image" src="src/assets/skiier.png" />
-          </div>
-        </div>
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage/>}>
+        </Route>
+      </Routes>
     </div>
   )
 }

@@ -9,3 +9,4 @@ To run the frontend:
 To run the backend:
 - `cd api`
 - `npm start`
+- port is 3000
