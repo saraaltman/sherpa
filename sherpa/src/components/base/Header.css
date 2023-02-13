@@ -1,5 +1,5 @@
 .header {
-    background-color: blue;
+    background-color: #33658A;;
     height: 100px;
     position: absolute;
     top: 0px;
@@ -8,9 +8,29 @@
 }
 
 .logo {
-    color: white;
-    font-size: 40px;
     position: absolute;
     top: 20px;
     left: 50px;
+}
+
+a {
+    color: white;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+}
+a:visited {color:white} 
+
+.avatarButton {
+    position: absolute;
+    top: 15px;
+    right: 50px;
+    background: none;
+}
+
+.avatar {
+    color: white;
+    height: 50px;
+    width: 50px;
 }
