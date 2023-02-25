@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom';
 import './header.css'
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const navigate = useNavigate();
@@ -14,6 +15,11 @@ const Header = () => {
                 <a href="/">
                     Sherpa
                 </a>
+            </div>
+            <div className="signup">
+            <li>
+                    <Link to="/Signup" className={({ isActive }) => (isActive ? "tab-active" : "tab")}>Signup</Link>
+                </li>
             </div>
             <div>
                 <button className="avatarButton" onClick={handleProfileClick}>
