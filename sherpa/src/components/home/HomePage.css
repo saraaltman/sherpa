@@ -1,13 +1,16 @@
 body {
     background-color: white;
-    height: 2000px;
-    overflow: scroll;
+    height: 100%;
 }
 
 .top {
     position: relative;
     top: 156px;
-    left: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 200px;
+
 }
 
 img {
@@ -20,6 +23,8 @@ img {
 .search {
     position: absolute;
     top: 400px;
+    left: 50%;
+    transform: translate(-50%, 0);
     width: 1000px;
     height: 100px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
@@ -40,7 +45,7 @@ img {
 .searchInput {
     background-color: white;
     display: block;
-    margin-top: 33px;
+    margin-top: 23px;
     margin-left: 150px;
     font-size: 50px;
     border: none;
@@ -48,7 +53,8 @@ img {
 }
 
 .findBy {
-    margin-top: 50px;
+    top: 50px;
+    position: relative;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -58,10 +64,15 @@ img {
 
 .state {
     background-color: #A1D2CE;
+    color: black;
     width: 900px;
     height: 450px;
     float: left;
     border-radius: 10px;
+}
+
+.stateList {
+    list-style-type: none;
 }
 
 h2 {
@@ -71,9 +82,14 @@ h2 {
 
 .rating {
     background-color: #A1D2CE;
+    color: black;
     margin-left: 80px;
     width: 475px;
     height: 450px;
     float: right;
     border-radius: 10px;
+}
+
+.ratingList {
+    list-style-type: none;
 }
