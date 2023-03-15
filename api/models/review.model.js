@@ -1,17 +1,17 @@
-const ReviewType = require("../models/reviewType.model");
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-    id: {type: String, required: true},
+    _id: {type: String},
     user: { type: String, required: true },
     entity: { type: String, required: true },
-    rating: { type: Number, required: true },
+    rating: { type: Number, required: true, enum:[1,2,3,4,5] },
+    trailDifficulty: {type: Number, required: true, enum:[1,2,3]},
     note: { type: String, required: true },
-    reviewType: { type: ReviewType, required: true },
+    reviewType: { type: String, required: true, enum: ["mountain", "trail"] },
 }, {
     timestamps: true,
 });
 
-const Mountain = mongoose.model('Mountain', mountainSchema);
-module.exports = Mountain;
+const Review = mongoose.model('Review', reviewSchema);
+module.exports = Review;

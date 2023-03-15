@@ -1,18 +1,16 @@
-const Sport = require("../models/sport.model");
-const Level = require("../models/level.model");
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    id: {type: String, required: true},
+    _id: {type: String},
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    sport: { type: Sport, required: true },
-    skiLevel: { type: Level, required: true },
-    snowboardLevel: { type: Level, required: true },
-    reviews: { type: Array, required: true },
+    sport: { type: String, enum: ["snowboard", "ski", "both"] },
+    skiLevel: { type: String, enum: ["beginner", "intermediate", "expert", "na"] },
+    snowboardLevel: { type: String, enum: ["beginner", "intermediate", "expert", "na"] },
+    reviews: { type: Array},
 }, {
     timestamps: true,
 });

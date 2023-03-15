@@ -3,51 +3,80 @@ const mountainRouter = express.Router();
 const Mountain = require('../models/mountain.model');
 const State = require('../models/state.model');
 
-// Get By Rating
-// todo: replace hard coded 5 with rating from req
+// route for getting all mountains or filtering by rating or state
+// route is /mountain?rating=5&state=NC
+// both rating & state are optional
 mountainRouter.get('/', (req, res) => {
-  Mountain.find({rating: 5}).then(
-    mountains => {
-      res.send(mountains);
-    })
-    .catch(err => {
-      res.status(400).send('unable to save to database');
-    });
+  var rating = req.query.rating;
+  var state = req.query.state;
+  if (rating == undefined) {
+    Mountain.find({ locationState: state }).then(
+      mountains => {
+        res.send(mountains);
+      })
+      .catch(err => {
+        res.status(400).send('error finding mountains');
+        console.log(err);
+      });
+  } else {
+    Mountain.find({ rating: rating, locationState: state }).then(
+      mountains => {
+        res.send(mountains);
+      })
+      .catch(err => {
+        res.status(400).send('error finding mountains');
+        console.log(err);
+      });
+  }
+
 });
 
-// Get By State
-// todo: replace hard coded NC with rating from req
-mountainRouter.get('/', (req, res) => {
-  Mountain.find({locationState: State.NC}).then(
-    mountains => {
-      res.send(mountains);
-    })
-    .catch(err => {
-      res.status(400).send('unable to save to database');
-    });
+// route for searching for mountains by name
+// mountain & rating can also be added as query params here
+// but the name is required
+mountainRouter.get('/search/:name', (req, res) => {
+  var name = req.params.name;
+  var rating = req.query.rating;
+  var state = req.query.state;
+  if (rating == undefined) {
+    Mountain.find({ name: { "$regex": name, $options: "i" }, locationState: state }).then(
+      mountains => {
+        res.send(mountains);
+      })
+      .catch(err => {
+        res.status(400).send('error finding mountains');
+        console.log(err);
+      });
+  } else {
+    Mountain.find({ name: { "$regex": name, $options: "i" }, rating: rating, locationState: state }).then(
+      mountains => {
+        res.send(mountains);
+      })
+      .catch(err => {
+        res.status(400).send('error finding mountains');
+        console.log(err);
+      });
+  }
 });
-
-// todo: Get By Name search
-mountainRouter.get('/', (req, res) => {
-  Mountain.find({rating: 5}).then(
-    mountains => {
-      res.send(mountains);
-    })
-    .catch(err => {
-      res.status(400).send('unable to save to database');
-    });
-});
-
 
 // todo: update once we get to the add mountain portion
 mountainRouter.post("/", (req, res) => {
-  var mountain = req.mountain;
+  var mountain = new Mountain(
+    {
+      name: req.body.name,
+      numLifts: req.body.numLifts,
+      trails: req.body.trails,
+      locationTown: req.body.locationTown,
+      locationState: req.body.locationState,
+      rating: req.body.rating
+    });
   mountain.save()
     .then(item => {
-      res.send('item saved to database');
+      res.send(`Mountain ${item._id} saved to database`);
     })
     .catch(err => {
-      res.status(400).send('unable to save to database');
+      res.status(400).send('unable to save mountain to database');
+      console.log(err);
     });
 });
 
