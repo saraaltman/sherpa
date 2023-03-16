@@ -6,7 +6,7 @@ const reviewSchema = new Schema({
     user: { type: String, required: true },
     entity: { type: String, required: true },
     rating: { type: Number, required: true, enum:[1,2,3,4,5] },
-    trailDifficulty: {type: Number, required: true, enum:[1,2,3]},
+    trailDifficulty: {type: Number, enum:[1,2,3]},
     note: { type: String, required: true },
     reviewType: { type: String, required: true, enum: ["mountain", "trail"] },
 }, {
