@@ -1,0 +1,81 @@
+.listItem {
+    background-color: white;
+    border-style: solid;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+}
+
+.row {
+    width: 1319px;
+    height: 196px;
+}
+
+.firstCol {
+    position: relative;
+}
+
+.mountainIcon {
+    position: absolute;
+    width: 154px;
+    height: 147px;
+    left: 24px;
+    top: 25px;
+    background: #A1D2CE;
+    border-radius: 10px;
+}
+
+.mountainImage {
+    width: 125px;
+    height: 125px;
+}
+
+.secondCol {
+    text-align: left;
+}
+
+.mountainName {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.mountainLifts {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.mountainTrails {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.thirdCol {
+    text-align: right;
+    font-size: 24px;
+    position: relative;
+}
+
+.mountainLocation {
+    position: absolute;
+    top: 143px;
+    right: 10px;
+}
+
+.fourthCol {
+    position: relative;
+}
+
+.verticalLine {
+    border-left: 2px solid gray;
+    height: 155px;
+    width: 5px;
+    margin-top: 20px;
+}
+
+.mountainRating {
+    font-size: 30px;
+    position: absolute;
+    top: 78px;
+    left: 50%;
+    transform: (-50%, 0);
+}
