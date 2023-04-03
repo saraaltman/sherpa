@@ -9,26 +9,23 @@ const State = require('../models/state.model');
 mountainRouter.get('/', (req, res) => {
   var rating = req.query.rating;
   var state = req.query.state;
-  if (rating == undefined) {
-    Mountain.find({ locationState: state }).then(
-      mountains => {
-        res.send(mountains);
-      })
-      .catch(err => {
-        res.status(400).send('error finding mountains');
-        console.log(err);
-      });
-  } else {
-    Mountain.find({ rating: rating, locationState: state }).then(
-      mountains => {
-        res.send(mountains);
-      })
-      .catch(err => {
-        res.status(400).send('error finding mountains');
-        console.log(err);
-      });
-  }
+  var query = {}
 
+  if (rating != undefined) {
+    query.rating = rating
+  }
+  if (state != undefined) {
+    query.locationState = state
+  }
+  
+  Mountain.find(query).then(
+    mountains => {
+      res.send(mountains);
+    })
+    .catch(err => {
+      res.status(400).send('error finding mountains');
+      console.log(err);
+    });
 });
 
 // route for searching for mountains by name
@@ -38,25 +35,24 @@ mountainRouter.get('/search/:name', (req, res) => {
   var name = req.params.name;
   var rating = req.query.rating;
   var state = req.query.state;
-  if (rating == undefined) {
-    Mountain.find({ name: { "$regex": name, $options: "i" }, locationState: state }).then(
-      mountains => {
-        res.send(mountains);
-      })
-      .catch(err => {
-        res.status(400).send('error finding mountains');
-        console.log(err);
-      });
-  } else {
-    Mountain.find({ name: { "$regex": name, $options: "i" }, rating: rating, locationState: state }).then(
-      mountains => {
-        res.send(mountains);
-      })
-      .catch(err => {
-        res.status(400).send('error finding mountains');
-        console.log(err);
-      });
+  var query = {}
+
+  if (rating != undefined) {
+    query.rating = rating
   }
+  if (state != undefined) {
+    query.locationState = state
+  }
+  query.name = { "$regex": name, $options: "i" };
+
+  Mountain.find(query).then(
+    mountains => {
+      res.send(mountains);
+    })
+    .catch(err => {
+      res.status(400).send('error finding mountains');
+      console.log(err);
+    });
 });
 
 // todo: update once we get to the add mountain portion

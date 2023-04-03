@@ -16,7 +16,7 @@ const Header = () => {
                 </a>
             </div>
             <div>
-                <button className="avatarButton" onClick={handleProfileClick}>
+                <button className="avatarButton" onClick={() => handleProfileClick}>
                     <FontAwesomeIcon className="avatar" icon={faUser} />
                 </button>
             </div>

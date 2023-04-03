@@ -1,7 +1,8 @@
 require("dotenv").config();
 const express = require('express');
 const mongoose = require("mongoose");
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 
 const app = express();
@@ -16,6 +17,11 @@ mongoose.connect(
       useUnifiedTopology: true
   }
 );
+
+//cors
+app.use(cors({
+    origin: 'http://localhost:5173'
+}));
 
 // routes
 const userRouter = require('./routes/userRouter');
