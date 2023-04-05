@@ -1,8 +1,8 @@
 const Level = {
-    BEGINNER,
-    INTERMEDIATE,
-    EXPERT,
-    NA
+    BEGINNER: "beginner",
+    INTERMEDIATE: "intermediate",
+    EXPERT: "expert",
+    NA: "na"
 }
 
 module.exports = Level;

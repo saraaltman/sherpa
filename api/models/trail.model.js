@@ -1,17 +1,17 @@
-const TrailLevel = require("../models/trailLevel.model");
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const trailSchema = new Schema({
-    id: {type: String, required: true},
+    _id: {type: String},
     name: { type: String, required: true },
-    mountain: { type: Number, required: true },
-    trailLevel: { type: TrailLevel, required: true },
-    rating: { type: Number, required: true },
-    mountainMapURL: {type: String, required: false}
+    mountain: { type: String, required: true },
+    trailLevel: { type: String, required: true, enum: ["green", "blue", "black", "double black"] },
+    rating: { type: Number, required: true, enum: [1,2,3,4,5] },
+    difficulty: {type: Number, required: true, enum: [1,2,3]},
+    mountainMapURL: {type: String}
 }, {
     timestamps: true,
 });
 
-const Mountain = mongoose.model('Mountain', mountainSchema);
-module.exports = Mountain;
+const Trail = mongoose.model('Trail', trailSchema);
+module.exports = Trail;

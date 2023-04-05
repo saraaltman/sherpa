@@ -8,13 +8,20 @@ userRouter.get('/', (req, res) => {
 
 
 userRouter.post("/", (req, res) => {
-  var user = new User({firstname: 'Sara', lastname: 'Altman', email: 'saraaltman9@gmail.com', password: 'password'});
+  var user = new User(
+    {
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      password: req.body.password
+    });
   user.save()
     .then(item => {
-      res.send('item saved to database');
+      res.send(`User ${item._id} saved to database`);
     })
     .catch(err => {
-      res.status(400).send('unable to save to database');
+      res.status(400).send('unable to save user to database');
+      console.log(err);
     });
 });
 
