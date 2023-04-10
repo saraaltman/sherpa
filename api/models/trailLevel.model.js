@@ -1,8 +1,8 @@
 const trailLevel = {
-    GREEN,
-    BLUE,
-    BLACK,
-    DOUBLE_BLACK
+    GREEN: "green",
+    BLUE: "blue",
+    BLACK: "black",
+    DOUBLE_BLACK: "double black"
 }
 
 module.exports = trailLevel;

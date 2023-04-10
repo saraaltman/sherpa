@@ -1,7 +1,7 @@
 const Sport = {
-    SNOWBOARD,
-    SKI,
-    BOTH
+    SNOWBOARD: "snowboard",
+    SKI: "ski",
+    BOTH: "both"
 }
 
 module.exports = Sport;

@@ -1,6 +1,6 @@
 const ReviewType = {
-    MOUNTAIN,
-    TRAIL
+    MOUNTAIN: "mountain",
+    TRAIL: "trail"
 }
 
 module.exports = ReviewType;
