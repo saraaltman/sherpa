@@ -1,10 +1,10 @@
-.searchButton {
+.btn-custom1 {
     background-color: white;
     color: black;
     border-radius: 20px;
     height: 75px;
-    width: 400px;
-    margin: 10px;
+    width: 200px;
+    margin-bottom: 10px;
     font-size: 40px;
     padding-top: 12px;
     color: #33658A;

@@ -1,6 +1,6 @@
 import Header from "../common/header"
 import React, { useState } from 'react';
-import skiLift from '../../assets/ski-lift.jpeg';
+import mountainBackground from '../../assets/mountainBackground.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { searchByState, searchByRating, searchByInput } from '../../services/MountainService'
@@ -75,37 +75,49 @@ const HomePage = () => {
     }
 
     return (
-        <Container>
-            <Row>
-                <Image src={skiLift} height={450} width={1500}></Image>
-                <div>
-                    <InputGroup>
-                        <Form.Control type="text" value={search} placeholder={"Search"} onChange={(e) => setSearch(e.target.value )}/>
-                        <Button variant="outline-secondary" id="button-addon2" onClick={() => searchBarSearch()}>
-                            <FontAwesomeIcon className="searchIcon" icon={faSearch} />
-                        </Button>
-                    </InputGroup>
-                </div>
-            </Row>
-            <Row>
-                <Col>
-                    <Container className="group">
-                        <Row> Title </Row>
-                        <Row className='py-2'>
-                            {Object.entries(states).map(([state, abr]) => <Col lg={4} md={6}><SearchButton buttonLabel={state} onClickProp={() => stateSearch(abr)}></SearchButton></Col>)}
+        <>
+            <Header></Header>
+            <Container fluid={true}>
+                <Row className="searchRow">
+                    <Col sm={1} md={1} lg={1} xl={1}></Col>
+                    <Col sm={10} md={10} lg={10} xl={10}>
+                        <Image src={mountainBackground} className="mountainBackgroundImage"></Image>
+                        <InputGroup style={{width:"80%", margin: "auto"}}>
+                            <Form.Control size="xxl" type="text" value={search} placeholder={"Search"} onChange={(e) => setSearch(e.target.value)} style={{fontSize:"30px"}}  />
+                            <Button size="xxl" variant="outline-secondary" id="button-addon2" onClick={() => searchBarSearch()}>
+                                <FontAwesomeIcon className="searchIcon" icon={faSearch} />
+                            </Button>
+                        </InputGroup>
+                    </Col>
+                    <Col sm={1} md={1} lg={1} xl={1}></Col>
+                </Row>
+                <Row>
+                    <Col sm={1} md={1} lg={1} xl={1}></Col>
+                    <Col sm={10} md={10} lg={10} xl={10}>
+                        <Row>
+                            <Col>
+                                <Container className="group">
+                                    <Row> <p className="groupTitle">Search By State</p>  </Row>
+                                    <Row className='py-2'>
+                                        {Object.entries(states).map(([state, abr]) => <Col lg={4} md={6}><SearchButton buttonLabel={state} onClickProp={() => stateSearch(abr)}></SearchButton></Col>)}
+                                    </Row>
+                                </Container>
+                            </Col>
+                            <Col>
+                                <Container className="group">
+                                    <Row> <p className="groupTitle">Search By Rating</p> </Row>
+                                    <Row className='py-2'>
+                                        {Object.entries(snowflakes).map(([snowflake, rating]) => <Col lg={12}><SearchButton buttonLabel={snowflake} onClickProp={() => ratingSearch(rating)}></SearchButton></Col>)}
+                                    </Row>
+                                </Container>
+                            </Col>
                         </Row>
-                    </Container>
-                </Col>
-                <Col>
-                    <Container className="group">
-                        <Row> Title </Row>
-                        <Row className='py-2'>
-                            {Object.entries(snowflakes).map(([snowflake, rating]) => <Col lg={12}><SearchButton buttonLabel={snowflake} onClickProp={() => ratingSearch(rating)}></SearchButton></Col>)}
-                        </Row>
-                    </Container>
-                </Col>
-            </Row>
-        </Container>
+                    </Col>
+                    <Col sm={1} md={1} lg={1} xl={1}></Col>
+
+                </Row>
+            </Container>
+        </>
     );
 }
 export default HomePage;
