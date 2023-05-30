@@ -83,8 +83,8 @@ const HomePage = () => {
                     <Col sm={10} md={10} lg={10} xl={10}>
                         <Image src={mountainBackground} className="mountainBackgroundImage"></Image>
                         <InputGroup style={{width:"80%", margin: "auto"}}>
-                            <Form.Control size="xxl" type="text" value={search} placeholder={"Search"} onChange={(e) => setSearch(e.target.value)} style={{fontSize:"30px"}}  />
-                            <Button size="xxl" variant="outline-secondary" id="button-addon2" onClick={() => searchBarSearch()}>
+                            <Form.Control size="xxl" type="text" value={search} placeholder={"Search"} onChange={(e) => setSearch(e.target.value)} style={{fontSize:"30px", border:"0px solid white", boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)"}}  />
+                            <Button size="xxl" className="searchIconButton"variant="outline-secondary" style={{backgroundColor:"white", boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)"}} onClick={() => searchBarSearch()}>
                                 <FontAwesomeIcon className="searchIcon" icon={faSearch} />
                             </Button>
                         </InputGroup>
@@ -95,15 +95,15 @@ const HomePage = () => {
                     <Col sm={1} md={1} lg={1} xl={1}></Col>
                     <Col sm={10} md={10} lg={10} xl={10}>
                         <Row>
-                            <Col>
+                            <Col sm={12} md={12} lg={8} xl={8}>
                                 <Container className="group">
                                     <Row> <p className="groupTitle">Search By State</p>  </Row>
                                     <Row className='py-2'>
-                                        {Object.entries(states).map(([state, abr]) => <Col lg={4} md={6}><SearchButton buttonLabel={state} onClickProp={() => stateSearch(abr)}></SearchButton></Col>)}
+                                        {Object.entries(states).map(([state, abr]) => <Col md={6} lg={6} xl={6} xxl={4} ><SearchButton buttonLabel={state} onClickProp={() => stateSearch(abr)}></SearchButton></Col>)}
                                     </Row>
                                 </Container>
                             </Col>
-                            <Col>
+                            <Col sm={12} md={12} lg={4} xl={4}>
                                 <Container className="group">
                                     <Row> <p className="groupTitle">Search By Rating</p> </Row>
                                     <Row className='py-2'>

@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 const SearchButton = ({ buttonLabel, onClickProp }) => {
     return (
-        <Button variant="custom1" onClick={onClickProp}>
+        <Button className="btn-search" onClick={onClickProp}>
             {buttonLabel}
         </Button>
 

@@ -20,6 +20,7 @@ a:visited {
     width: 50px;
 }
 
-.btn-custom {
+.btn.btn-profile {
     background-color: #33658A;
+    border: 0px solid #33658A;
 }

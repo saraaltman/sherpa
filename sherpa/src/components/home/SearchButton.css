@@ -1,11 +1,12 @@
-.btn-custom1 {
+.btn.btn-search {
     background-color: white;
     color: black;
-    border-radius: 20px;
-    height: 75px;
-    width: 200px;
+    border-radius: 30px;
+    border: 0px solid white;
+    height: 60px;
+    width: 275px;
     margin-bottom: 10px;
-    font-size: 40px;
+    font-size: 24px;
     padding-top: 12px;
     color: #33658A;
     font-family: 'Inter';

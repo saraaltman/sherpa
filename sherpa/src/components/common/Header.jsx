@@ -21,7 +21,7 @@ const Header = () => {
                 <Col sm={9} md={9} lg={9} xl={9}>
                 </Col>
                 <Col sm={1} md={1} lg={1} xl={1}>
-                    <Button variant="custom" onClick={() => handleProfileClick}>
+                    <Button className="btn-profile" onClick={() => handleProfileClick}>
                         <FontAwesomeIcon className="avatar" icon={faUser} />
                     </Button>
                 </Col>
