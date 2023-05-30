@@ -1,0 +1,36 @@
+.Tag {
+    width: 250px;
+}
+
+.GreenCircle {
+    height: 25px;
+    width: 25px;
+    color: #269E47;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.BlueCircle {
+    height: 25px;
+    width: 25px;
+    color: #307BD3;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.BlackCircle {
+    height: 25px;
+    width: 25px;
+    color: black;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.doubleBlack {
+    float: left;
+}
+
+.level {
+    font-size: 24px;
+    text-align: left;
+}

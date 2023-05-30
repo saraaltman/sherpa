@@ -1,12 +1,13 @@
 import './SearchButton.css'
 import React from 'react';
+import Button from "react-bootstrap/Button";
 
-const SearchButton = ({buttonLabel, onClickProp}) => {
+const SearchButton = ({ buttonLabel, onClickProp }) => {
     return (
-        <button className="searchButton" onClick={onClickProp}>
+        <Button className="btn-search" onClick={onClickProp}>
             {buttonLabel}
-        </button>
-            
+        </Button>
+
     );
 }
 export default SearchButton;
