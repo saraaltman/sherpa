@@ -12,22 +12,24 @@ const MountainListItem = ({ mountain }) => {
     return (
         <Container className="listItem">
             <Row>
-                <Col sm={2} md={2} lg={2} className="firstCol">
+                <Col sm={4} md={3} lg={3} >
                     <div className="mountainIcon">
                         <img className="mountainImage" src={mountainImage} alt="image of cartoon mountain"></img>
                     </div>
                 </Col>
-                <Col sm={4} md={4} lg={4} className="secondCol">
+                <Col sm={3} md={3} lg={3} className="mountainInfo">
                     <div className="mountainName">{mountain.name}</div>
                     <div className="mountainLifts">{mountain.numLifts} lifts</div>
                     <div className="mountainTrails">{mountain.trails.length} trails</div>
                 </Col>
-                <Col sm={3} md={3} lg={3} className="thirdCol">
+                <Col sm={2} md={3} lg={3} className="align-content-end justify-content-end" style={{display: "flex"}}>
                     <div className="mountainLocation">{mountain.locationTown}, {mountain.locationState}</div>
                 </Col>
-                <Col sm={3} md={3} lg={3} className="fourthCol">
+                <Col sm={1} md={1} lg={1} className="align-items-center justify-content-end" style={{display: "flex"}}>
                     <div className="verticalLine"></div>
-                    <div className="mountainRating">
+                </Col>
+                <Col className="align-items-center justify-content-center" style={{display: "flex"}} sm={2} md={2} lg={2} >
+                <div className="mountainRating">
                         {snowflakes[mountain.rating - 1]}
                     </div>
                 </Col>

@@ -7,7 +7,6 @@ import { searchByState, searchByRating, searchByInput } from '../../services/Mou
 import { useNavigate } from 'react-router-dom'
 
 import './HomePage.css'
-import TrailListItem from '../future/TrailListItem/TrailListItem';
 import SearchButton from "./SearchButton";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -24,30 +23,10 @@ const HomePage = () => {
 
     const [search, setSearch] = React.useState("");
 
-    let mountain = {
-        id: "12345",
-        name: "Beech Mountain",
-        numLifts: 5,
-        trails: [],
-        locationTown: "Beech Mountain",
-        locationState: "NC",
-        rating: 3,
-        websiteURL: ""
-    }
-    let trail = {
-        id: "123",
-        name: "The Oz",
-        mountain: "12345",
-        trailLevel: "Blue",
-        rating: 4,
-        mountainMapURL: ""
-    }
-
     const stateSearch = (state) => {
         searchByState(state)
             .then(response => {
-                console.log(response);
-                navigate('/mountains', { state: { mountains: response } });
+                navigate('/mountains', { state: { mountains: response, state: state, rating: "", search: "" } });
             }).catch(e => {
                 console.log(e)
             });
@@ -56,8 +35,7 @@ const HomePage = () => {
     const ratingSearch = (rating) => {
         searchByRating(rating)
             .then(response => {
-                console.log(response);
-                navigate('/mountains', { state: { mountains: response } });
+                navigate('/mountains', { state: { mountains: response, state: "", rating: rating, search: "" } });
             }).catch(e => {
                 console.log(e)
             });
@@ -66,8 +44,7 @@ const HomePage = () => {
     const searchBarSearch = () => {
         searchByInput(search)
             .then(response => {
-                console.log(response);
-                navigate('/mountains', { state: { mountains: response } });
+                navigate('/mountains', { state: { mountains: response, state: "", rating: "", search: search } });
             }).catch(e => {
                 console.log(e)
             });
@@ -83,7 +60,7 @@ const HomePage = () => {
                     <Col sm={10} md={10} lg={10} xl={10}>
                         <Image src={mountainBackground} className="mountainBackgroundImage"></Image>
                         <InputGroup style={{width:"80%", margin: "auto"}}>
-                            <Form.Control size="xxl" type="text" value={search} placeholder={"Search"} onChange={(e) => setSearch(e.target.value)} style={{fontSize:"30px", border:"0px solid white", boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)"}}  />
+                            <Form.Control size="xxl" type="text" value={search} placeholder={"Search Mountains"} onChange={(e) => setSearch(e.target.value)} style={{fontSize:"30px", border:"0px solid white", boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)"}}  />
                             <Button size="xxl" className="searchIconButton"variant="outline-secondary" style={{backgroundColor:"white", boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)"}} onClick={() => searchBarSearch()}>
                                 <FontAwesomeIcon className="searchIcon" icon={faSearch} />
                             </Button>
