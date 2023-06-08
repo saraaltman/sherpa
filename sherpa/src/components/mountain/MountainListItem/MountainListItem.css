@@ -1,0 +1,57 @@
+.listItem {
+    background-color: white;
+    border-style: solid;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.mountainImage {
+    height: 125px;
+    width: 125px;
+}
+
+.mountainIcon {
+    height: 150px;
+    width: 150px;
+    background-color: #A1D2CE;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px
+}
+
+.mountainInfo{
+    text-align: left;
+}
+
+.mountainName {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.mountainLifts {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.mountainTrails {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.mountainLocation {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.verticalLine {
+    border-right: 2px solid gray;
+    height: 145px;
+    width: 1px;
+}
+
+.mountainRating {
+    font-size: 30px;
+}
