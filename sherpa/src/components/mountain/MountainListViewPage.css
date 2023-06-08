@@ -5,8 +5,14 @@
 .searchRow {
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-bottom: 0px;
 }
 
 .filterRow {
     margin-bottom: 20px;
+}
+
+.searchIcon {
+    height: 20px;
+    width: 20px;
 }

@@ -7,7 +7,7 @@ import mountainImage from '../../../assets/mountain.png';
 
 const MountainListItem = ({ mountain }) => {
 
-    let snowflakes = ["❄️❄️❄️❄️❄️", "❄️❄️❄️❄️", "❄️❄️❄️", "❄️", "❄️"]
+    let snowflakes = [ "❄️", "❄️❄️", "❄️❄️❄️", "❄️❄️❄️❄️", "❄️❄️❄️❄️❄️"]
 
     return (
         <Container className="listItem">

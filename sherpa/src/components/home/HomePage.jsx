@@ -21,12 +21,12 @@ const HomePage = () => {
     let states = { "Colorado": "CA", "Utah": "UT", "North Carolina": "NC", "Vermont": "VT", "New Hampshire": "NH", "Wyoming": "WY" }
     let snowflakes = { "❄️❄️❄️❄️❄️": 5, "❄️❄️❄️❄️": 4, "❄️❄️❄️": 3 }
 
-    const [search, setSearch] = React.useState("");
+    const [name, setName] = React.useState("");
 
     const stateSearch = (state) => {
         searchByState(state)
             .then(response => {
-                navigate('/mountains', { state: { mountains: response, state: state, rating: "", search: "" } });
+                navigate('/mountains', { state: { mountains: response, state: state, rating: "", name: "" } });
             }).catch(e => {
                 console.log(e)
             });
@@ -35,16 +35,16 @@ const HomePage = () => {
     const ratingSearch = (rating) => {
         searchByRating(rating)
             .then(response => {
-                navigate('/mountains', { state: { mountains: response, state: "", rating: rating, search: "" } });
+                navigate('/mountains', { state: { mountains: response, state: "", rating: rating, name: "" } });
             }).catch(e => {
                 console.log(e)
             });
     }
 
     const searchBarSearch = () => {
-        searchByInput(search)
+        searchByInput(name)
             .then(response => {
-                navigate('/mountains', { state: { mountains: response, state: "", rating: "", search: search } });
+                navigate('/mountains', { state: { mountains: response, state: "", rating: "", name: name } });
             }).catch(e => {
                 console.log(e)
             });
@@ -60,7 +60,7 @@ const HomePage = () => {
                     <Col sm={10} md={10} lg={10} xl={10}>
                         <Image src={mountainBackground} className="mountainBackgroundImage"></Image>
                         <InputGroup style={{width:"80%", margin: "auto"}}>
-                            <Form.Control size="xxl" type="text" value={search} placeholder={"Search Mountains"} onChange={(e) => setSearch(e.target.value)} style={{fontSize:"30px", border:"0px solid white", boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)"}}  />
+                            <Form.Control size="xxl" type="text" value={name} placeholder={"Search Mountains"} onChange={(e) => setName(e.target.value)} style={{fontSize:"30px", border:"0px solid white", boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)"}}  />
                             <Button size="xxl" className="searchIconButton"variant="outline-secondary" style={{backgroundColor:"white", boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)"}} onClick={() => searchBarSearch()}>
                                 <FontAwesomeIcon className="searchIcon" icon={faSearch} />
                             </Button>
