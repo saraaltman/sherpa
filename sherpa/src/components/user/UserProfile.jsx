@@ -1,10 +1,10 @@
-import Header from "../base/Header"
+import Header from "../common/Header"
 
 const UserProfile = () => {
-    return(
+    return (
         <div>
             <Header></Header>
-            <h1>User Profile Page</h1>
+            <h1>User Profile Page</h1>
         </div>
     );
 }

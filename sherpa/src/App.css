@@ -1,35 +1,12 @@
-@font-face {
-  font-family: 'Inter';
-  src: local('Inter'), url('./fonts/Inter.tff') format('tff');
-}
-
-h1 {
-  font-family: Inter;
-  font-size: 64px;
-}
-
-h2 {
-  font-family: Inter;
-  font-size: 40px;
-}
-
-h3 {
-  font-family: Inter;
-  font-size: 32px;
-}
-
-h4 {
-  font-family: Inter;
-  font-size: 24px;
-}
-
-
-
 #root {
-  height: 100%;
   width: 100%;
+  height: 100%;
   text-align: center;
+  position: absolute;
+  top: 0;
+  overflow: scroll;
 }
+
 
 
 

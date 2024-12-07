@@ -1,0 +1,26 @@
+.header {
+    background-color: #33658A;
+}
+
+a {
+    color: white;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+a:visited {
+    color: white;
+}
+
+.avatar {
+    color: white;
+    height: 50px;
+    width: 50px;
+}
+
+.btn.btn-profile {
+    background-color: #33658A;
+    border: 0px solid #33658A;
+}
