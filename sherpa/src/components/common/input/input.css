@@ -1,0 +1,19 @@
+.sherpaInput {
+    margin-bottom: 10px;
+}
+.label {
+    font-size: 20pt;
+    text-align: left;
+
+}
+
+.input {
+    height: 50px;
+    width: 650px;
+    background-color: white;
+    border: 1pt solid white;
+    border-radius: 10px;
+    color: black;
+    font-size: 16pt;
+    padding-left: 10px;
+}

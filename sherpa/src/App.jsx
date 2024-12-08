@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import HomePage from './components/home/HomePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserProfile from './components/user/UserProfile';
-import Signup from './components/Signup/Signup';
+import Signup from './components/Signup/signup';
 import MountainListViewPage from './components/mountain/MountainListViewPage';
 
 import './App.css'
@@ -15,7 +15,7 @@ function App() {
 
         <Route path="/" element={<HomePage/>}></Route>
         <Route path="/profile" element={<UserProfile/>}></Route>
-        <Route path="/Signup" element={<Signup/>}></Route>
+        <Route path="/signup" element={<Signup/>}></Route>
         <Route path="/mountains" element={<MountainListViewPage />}></Route>
       </Routes>
     </div>

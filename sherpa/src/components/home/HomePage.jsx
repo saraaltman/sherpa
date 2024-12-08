@@ -1,4 +1,4 @@
-import Header from "../common/header"
+import Header from "../common/Header/Header"
 import React, { useState } from 'react';
 import mountainBackground from '../../assets/mountainBackground.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

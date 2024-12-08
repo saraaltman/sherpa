@@ -1,7 +1,23 @@
-.body {
-    background-color: green;
+.signUpPage {
+    background-color: #A1D2CE;
+    height: 100vh;
 }
-p {
-    font-size: xx-large;
-    color: pink;
+.skierImage {
+    margin-top: 200px;
+    height: 400px;
+    width: 400px;
+    margin-bottom: 50px;
+}
+
+.signUpForm {
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.signUpButton {
+    width: 650px;
+    height: 50px;
+    margin-top: 50px;
+    padding: 0;
 }

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Header from "../common/header"
+import Header from "../common/Header/Header"
 import { useLocation } from 'react-router-dom';
 import { mountainSearch } from '../../services/MountainService'
 import './MountainListViewPage.css'
