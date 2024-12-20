@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const mountainSchema = new Schema({
-    _id: {type: String},
     name: { type: String, required: true },
     numLifts: { type: Number, required: true },
     trails: { type: Array, required: true },

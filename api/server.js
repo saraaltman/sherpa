@@ -26,8 +26,10 @@ app.use(cors({
 // routes
 const userRouter = require('./routes/userRouter');
 const mountainRouter = require('./routes/mountainRouter');
+const reviewRouter = require('./routes/reviewRouter');
 app.use('/user', userRouter);
 app.use('/mountain', mountainRouter);
+app.use('/reviews', reviewRouter);
 
 
 app.listen(3000, () => console.log('Example app is listening on port 3000.'));

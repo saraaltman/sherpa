@@ -20,7 +20,7 @@ mountainRouter.get('/', (req, res) => {
   
   Mountain.find(query).then(
     mountains => {
-      res.send(mountains);
+      res.json(mountains);
     })
     .catch(err => {
       res.status(400).send('error finding mountains');

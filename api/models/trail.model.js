@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const trailSchema = new Schema({
-    _id: {type: String},
     name: { type: String, required: true },
     mountain: { type: String, required: true },
     trailLevel: { type: String, required: true, enum: ["green", "blue", "black", "double black"] },
