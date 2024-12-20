@@ -33,12 +33,33 @@ reviewRouter.post('/', async (req, res) => {
     });
     
     try {
-        response = await review.save();
-        res.send(`Sucessfully saved review to the database`);
+        const response = await review.save();
+        res.json(response);
     } catch (err) {
         res.status(500).json({"error": err});
     }
 
+})
+
+reviewRouter.put('/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+        const response = await Review.findByIdAndUpdate(id, req.body, {"new": true});
+        res.json(response);
+    } catch (err) {
+        res.status(500).json({"error": err});
+    }
+    
+})
+
+reviewRouter.delete('/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+        const response = await Review.findByIdAndDelete(id);
+        res.send(`Successfully deleted review ${response._id}`);
+    } catch (err) {
+        res.status(500).json({"error": err});
+    }
 })
 
 module.exports = reviewRouter;

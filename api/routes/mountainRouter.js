@@ -1,7 +1,6 @@
 const express = require('express');
 const mountainRouter = express.Router();
 const Mountain = require('../models/mountain.model');
-const State = require('../models/state.model');
 
 // route for getting all mountains or filtering by rating or state
 // route is /mountain?rating=5&state=NC
@@ -75,5 +74,14 @@ mountainRouter.post("/", (req, res) => {
       console.log(err);
     });
 });
+
+mountainRouter.get("/:id", async (req, res) => {
+  try {
+    const mountain = Mountain.findById(req.params.id);
+    res.json(mountain);
+  } catch (err) {
+    res.status(500).send(`Error: ${err}`);
+  }
+})
 
 module.exports = mountainRouter;

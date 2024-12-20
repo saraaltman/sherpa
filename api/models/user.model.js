@@ -8,8 +8,7 @@ const userSchema = new Schema({
     password: { type: String, required: true },
     sport: { type: String, enum: ["snowboard", "ski", "both"] },
     skiLevel: { type: String, enum: ["beginner", "intermediate", "expert", "na"] },
-    snowboardLevel: { type: String, enum: ["beginner", "intermediate", "expert", "na"] },
-    reviews: { type: Array},
+    snowboardLevel: { type: String, enum: ["beginner", "intermediate", "expert", "na"] }
 }, {
     timestamps: true,
 });
